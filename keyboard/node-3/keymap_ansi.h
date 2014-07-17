@@ -7,7 +7,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCLN,LBRC,RBRC,BSLS,      DEL, END, PGDN, \
         BSPC,A,   R,   S,   T,   D,   H,   N,   E,   I,   O,   QUOT,     ENT,                       \
         LSFT,     Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     RSFT,           UP,        \
-        LCTL,LGUI,LALT,               SPC,                RALT,RGUI,APP, RCTL,      LEFT,DOWN,RGHT
+        LCTL,LGUI,LALT,               SPC,                RALT,RGUI,FN0, RCTL,      LEFT,DOWN,RGHT
+    ),
+
+    /* Media Keys */
+    KEYMAP(\
+        TRNS,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,                      \
+        TRNS,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,           TRNS,      \
+        TRNS,TRNS,TRNS,               TRNS,               TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,TRTNS
     )
 };
-static const uint16_t PROGMEM fn_actions[] = { };
+static const uint16_t PROGMEM fn_actions[] = { 
+  [0] = ACTION_LAYER_MOMENTARY(1)
+};
