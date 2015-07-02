@@ -121,5 +121,9 @@ include $(TOP_DIR)/protocol/lufa.mk
 include $(TOP_DIR)/common.mk
 include $(TOP_DIR)/rules.mk
 
-ansi: OPT_DEFS += -DLAYOUT_ANSI
-ansi: all
+colemak: OPT_DEFS += -DLAYOUT_COLEMAK
+colemak: all
+
+qwerty: OPT_DEFS += -DLAYOUT_QWERTY
+qwerty: all
+
