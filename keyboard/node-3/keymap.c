@@ -48,7 +48,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* 5 */   { KC_##K5A, KC_##K5B, KC_##K5C, KC_NO,    KC_NO,    KC_NO,    KC_##K5G, KC_NO,    KC_NO,    KC_NO,    KC_##K5K, KC_##K5L, KC_##K5M, KC_##K5N, KC_##K5O, KC_##K5P, KC_##K5Q } \
 }
 
-#include "keymap_ansi.h"
+#if defined(LAYOUT_COLEMAK)
+  #include "keymap_ansi_colemak.h"
+#elif defined(LAYOUT_QWERTY)
+  #include "keymap_ansi_qwerty.h"
+#endif
 
 #define KEYMAPS_SIZE    (sizeof(keymaps) / sizeof(keymaps[0]))
 #define FN_ACTIONS_SIZE (sizeof(fn_actions) / sizeof(fn_actions[0]))
