@@ -164,17 +164,17 @@ static uint8_t read_rows(void)
 static void unselect_cols(void)
 {
     // Hi-Z(DDR:0, PORT:0) to unselect
-    DDRB  |= 0b01111100; // PB: 6 5 4 3 2
-    PORTB |= 0b01111100;
+    DDRB  &= ~0b01111100; // PB: 6 5 4 3 2
+    PORTB &= ~0b01111100;
 
-    DDRC  |= 0b01000000; // PC: 6
-    PORTC |= 0b01000000;
+    DDRC  &= ~0b01000000; // PC: 6
+    PORTC &= ~0b01000000;
 
-    DDRD  |= 0b10111100; // PD: 7 5 4 3 2
-    PORTD |= 0b10111100;
+    DDRD  &= ~0b10111100; // PD: 7 5 4 3 2
+    PORTD &= ~0b10111100;
 
-    DDRF  |= 0b11110011; // PF: 7 6 5 4 1 0
-    PORTF |= 0b11110011;
+    DDRF  &= ~0b11110011; // PF: 7 6 5 4 1 0
+    PORTF &= ~0b11110011;
 }
 
 static void select_col(uint8_t col)
